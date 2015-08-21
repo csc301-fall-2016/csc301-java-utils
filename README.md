@@ -1,3 +1,3 @@
-# Maven project template
+# CSC301 Java Utils
 
-Starter code for Maven projects in CSC301 (folder structure and pom.xml).
+Utility library for CSC301.
