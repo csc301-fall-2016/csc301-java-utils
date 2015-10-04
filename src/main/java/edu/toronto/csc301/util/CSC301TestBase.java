@@ -107,7 +107,7 @@ public abstract class CSC301TestBase {
 		try {
 			clazz.getConstructor(constructorParamTypes);
 		} catch (Exception e) {
-		  StringJoiner sigJoiner = new StringJoiner(",", "(", ")");
+		  StringJoiner sigJoiner = new StringJoiner(", ", "(", ")");
 		  for(Class<?> c: constructorParamTypes) {
 		    sigJoiner.add(c.getName());
 		  }
