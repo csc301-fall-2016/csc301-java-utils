@@ -6,6 +6,7 @@ import static org.junit.Assert.fail;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.StringJoiner;
 
 import org.junit.Assert;
 import org.junit.Rule;
@@ -90,7 +91,7 @@ public abstract class CSC301TestBase {
 		try {
 			clazz.newInstance();
 		} catch (Exception e) {
-			fail("Cannot create " + className + " instance - " + e.getMessage());
+			fail( className + " should define default constructor - " + e.getMessage());
 		}
 	}
 	
@@ -106,7 +107,12 @@ public abstract class CSC301TestBase {
 		try {
 			clazz.getConstructor(constructorParamTypes);
 		} catch (Exception e) {
-			fail("Cannot create " + className + " instance - " + e.getMessage());
+		  StringJoiner sigJoiner = new StringJoiner(",", "(", ")");
+		  for(Class<?> c: constructorParamTypes) {
+		    sigJoiner.add(c.getName());
+		  }
+		fail(className + " should define constructor with parameters - " + sigJoiner 
+		    + " no such method: " + e.getMessage());
 		}
 	}
 	
