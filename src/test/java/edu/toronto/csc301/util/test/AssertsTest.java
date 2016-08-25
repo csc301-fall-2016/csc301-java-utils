@@ -1,19 +1,13 @@
 package edu.toronto.csc301.util.test;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import edu.toronto.csc301.util.CSC301TestBase;
+import static edu.toronto.csc301.util.Asserts.*;
 
-public class AssertClassTests extends CSC301TestBase {
+public class AssertsTest {
 
-  @Before
-  public void setUp() throws Exception {}
-
-  @After
-  public void tearDown() throws Exception {}
-
+  // An extremely incomplete set of tests to show how you might use this library ...
+	
   @Test
   public void test1() throws ClassNotFoundException {
     assertClassHasConstructor("java.lang.String",String.class); 
