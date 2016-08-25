@@ -1,5 +1,6 @@
 package edu.toronto.csc301.util;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.StringJoiner;
@@ -94,6 +95,17 @@ public class Asserts {
 				anInterface.isAssignableFrom(clazz));
 	}
 	
+
 	
+	/**
+	 * Assert that the class <code>child</code> extends the class <code>expectedParent</code>. 
+	 * 
+	 * @param child The full name of the child class
+	 * @param expectedParent The full name of the (expected) parent class.
+	 */
+	public static void assertClassHasParent(String child, String expectedParent) throws ClassNotFoundException{
+		String actualParent = Class.forName(child).getSuperclass().getName();
+		assertEquals(expectedParent, actualParent);
+	}
 
 }
