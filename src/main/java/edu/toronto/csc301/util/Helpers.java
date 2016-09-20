@@ -29,7 +29,7 @@ public class Helpers {
 	 * it works well for our special use case - We use Unit Tests to specify 
 	 * to students which classes we expect them to create. 
 	 * 
-	 * @param className The full name of the class (including the package)
+	 * @param className The full name of the class (including the package).
 	 * 
 	 * @return A new instance
 	 */
